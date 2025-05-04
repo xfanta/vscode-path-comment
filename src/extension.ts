@@ -1,13 +1,11 @@
 import * as vscode from 'vscode';
 
-/**
- * Returns the line comment token for supported languages.
- * Returns null if the language is not supported.
- */
 function getLineCommentForLanguage(languageId: string): string | null {
     const map: Record<string, string> = {
         'javascript': '//',
         'typescript': '//',
+        'javascriptreact': '//',
+        'typescriptreact': '//',
         'jsonc': '//',
         'java': '//',
         'c': '//',
@@ -37,10 +35,6 @@ function getLineCommentForLanguage(languageId: string): string | null {
     return map[languageId] || null;
 }
 
-/**
- * Inserts or updates a path comment on the first line of the file.
- * Ensures there's a blank line after it.
- */
 function updatePathComment(doc: vscode.TextDocument) {
     if (doc.isUntitled || doc.uri.scheme !== 'file') return;
 
@@ -66,9 +60,6 @@ function updatePathComment(doc: vscode.TextDocument) {
     vscode.workspace.applyEdit(edit);
 }
 
-/**
- * Registers listeners and command for the extension.
- */
 export function activate(context: vscode.ExtensionContext) {
     const onOpen = vscode.workspace.onDidOpenTextDocument(updatePathComment);
     const onSave = vscode.workspace.onDidSaveTextDocument(updatePathComment);

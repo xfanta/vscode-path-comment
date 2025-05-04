@@ -8,17 +8,17 @@ This helps track file origin when copying code, similar to how ChatGPT formats c
 - Automatically inserts or updates the relative path comment:
   - When a file is **opened**
   - When a file is **saved**
-  - When triggered **manually via Command Palette** with  **Insert Path Comment**
+  - When triggered **manually via Command Palette**
 - Adds an empty line after the comment for clarity
 - Supports multiple languages with proper comment prefixes (e.g. `//`, `#`, `--`)
 - Skips file types that don't support comments (e.g. `.md`, `.html`)
 
 ## Example
 
-If you're editing a file at `src/utils/helpers.ts`, the first two lines will become:
+If you're editing a file at `src/utils/helpers.tsx`, the first two lines will become:
 
-```ts
-// src/utils/helpers.ts
+```tsx
+// src/utils/helpers.tsx
 
 export function doSomething() {
   // ...
@@ -27,7 +27,7 @@ export function doSomething() {
 
 ## Supported Languages
 
-- `//` — JavaScript, TypeScript, Java, C, C++, PHP, Kotlin, Swift, etc.
+- `//` — JavaScript, TypeScript, JSX, TSX, Java, C, C++, PHP, Kotlin, Swift, etc.
 - `#` — Python, Ruby, Shell, YAML, etc.
 - `--` — SQL, Lua
 - `;` — INI
@@ -46,7 +46,15 @@ The comment will be inserted or updated at the top of the active editor.
 
 This extension currently works automatically and doesn't require configuration.
 
-## 📓 Release Notes
+## Release Notes
+
+### 1.0.2
+
+- Added support for `.tsx` and `.jsx` files
+
+### 1.0.1
+
+- Fixed missing icon on Marketplace
 
 ### 1.0.0
 
@@ -55,6 +63,6 @@ This extension currently works automatically and doesn't require configuration.
 - Detects appropriate comment prefix by language
 - Skips unsupported file types
 
-## Source Code
+## 💻 Source Code
 
 [GitHub Repository](https://github.com/xfanta/vscode-path-comment)
