@@ -1,5 +1,27 @@
-# Dependency directories
+# https://marketplace.visualstudio.com/manage/publishers/xfanta
+
+# Node dependencies
 node_modules/
 
-# dotenv environment variable files
-.env*
+# Build output
+out/
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# VSCE package files
+*.vsix
+
+# Test folders
+.vscode-test/
+
+# Other temp files
+README.md~

@@ -1,25 +1,40 @@
 {
     "name": "vscode-path-comment",
     "displayName": "Path Comment",
-    "description": "Adds a comment with the file's relative path to the top of each file on save, using the same format as ChatGPT when showing code files.",
-    "version": "1.0.0",
+    "description": "Adds a comment with the file's relative path to the top of each file on open, save, or on command, using the same format as ChatGPT when showing code files.",
+    "version": "1.0.1",
     "publisher": "xfanta",
+    "icon": "icon.png",
     "engines": {
-        "vscode": "^1.50.0"
+      "vscode": "^1.50.0"
+    },
+    "categories": [
+      "Other"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/xfanta/vscode-path-comment.git"
     },
     "activationEvents": [
-        "onWillSaveTextDocument"
+      "onDidOpenTextDocument",
+      "onDidSaveTextDocument"
     ],
     "main": "./out/extension.js",
-    "contributes": {},
+    "contributes": {
+      "commands": [
+        {
+          "command": "extension.insertPathComment",
+          "title": "Insert Path Comment"
+        }
+      ]
+    },
     "scripts": {
-        "vscode:prepublish": "tsc -p ./"
+      "build": "tsc",
+      "vscode:prepublish": "npm run build"
     },
     "devDependencies": {
-        "@types/vscode": "^1.50.0",
-        "typescript": "^4.0.0"
+      "@types/vscode": "^1.50.0",
+      "typescript": "^4.0.0"
     },
-    "dependencies": {
-        "vscode": "^1.1.34"
-    }
-}
+    "dependencies": {}
+  }

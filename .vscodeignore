@@ -1,0 +1,26 @@
+# VS Code folders
+.vscode/
+.vscode-test/
+
+# Node.js dependencies
+node_modules/
+
+# TypeScript source
+src/
+
+# Build and logs
+out/*.map
+*.log
+*.tsbuildinfo
+
+# Git
+.git/
+.gitignore
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Other
+README.md~
+icon.svg
